@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  <h1 class="page-heading">Hi, welcome to Mick's page!</h1>
+  <div class="intro-content">
+    <div class="profile-container">
+      <!-- <div style="display: flex; flex-direction: row; justify-content: center; padding-top: 15px; padding-bottom: 15px">
+        {%- include components/link-button.html
+          link="http://chanwutk.github.io/resume/resume.pdf"
+          text="Here is my Resume!"
+        -%}
+      </div> -->
+    </div>
+    <div>
+      {{ content }}
+    </div>
+  </div>
+{% comment %} 
+  <br/>
+  <h2 id="publications">Publications</h2>
+  <div class="home-publications">
+    {%- assign publications = site.publications | sort: 'year' -%}
+    {%- for publication in publications -%}
+      {%- include components/publication-thumbnail.html publication=publication -%}
+    {%- endfor -%}
+  </div>
+{% endcomment %}
+
+  <br/>
+  <h2 id="projects">Selected Projects</h2>
+  <div class="home-projects">
+    {%- assign projects = site.projects | sort: 'priority' -%}
+    {%- for project in projects -%}
+      {%- if project.hide != true -%}
+        {%- include components/project-thumbnail.html project=project -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <br/>
+  <h2 id="publications">Publications</h2>
+  <div class="home-publications">
+    {%- assign publications = site.publications | sort: 'year' | reverse -%}
+    {%- for publication in publications -%}
+      {%- include components/publication-card.html publication=publication -%}
+    {%- endfor -%}
+  </div>
+
+  <br/>
+  <h2 id="experience">Work Experience</h2>
+  <ul class="post-list">
+    {%- assign exps_ends = site.experiences | group_by: 'end' | sort: 'name' | reverse -%}
+    {%- for exps_end in exps_ends -%}
+      {%- assign exps = exps_end.items | sort: 'start' | reverse -%}
+      {%- for exp in exps -%}
+        {%- include components/experience-card.html exp=exp -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  </ul>
+</div>
