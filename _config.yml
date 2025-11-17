@@ -17,56 +17,15 @@ minima:
 
   # generate social links in footer
   social_links:
-    twitter: chanwut_k
-    github:  chanwutk
-    googlescholar: Q9OsSU8AAAAJ
-    orcid: 0000-0002-2884-2221
-    dblp: 284/8705
-    arxiv: ''
-    semanticscholar: 2047935706
-    # devto: jekyll
-    # dribbble: jekyll
-    # facebook: jekyll
-    # flickr:   jekyll
-    # instagram: jekyll
-    linkedin: chanwut-k
-    # pinterest: jekyll
-    # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
-    # telegram: jekyll
-    # googleplus: +jekyll
-    # microdotblog: jekyll
-    # keybase: jekyll
+    scholar_userid: UA5y84MAAAAJ
+    orcid: 0009-0007-2858-3729
 
-    # Mastodon instances
-    # mastodon:
-    # - username: jekyll
-    #   instance: example.com
-    # - username: jekyll2
-    #   instance: example.com
-
-    # GitLab instances
-    # gitlab:
-    # - username: chanwutk
-    #   instance: gitlab.cs.washington.edu
-    # - username: chanwutk
-    #   instance: gitlab.com
-    
+    linkedin_username: p-chanrun
     # new social links
-    github_username: chanwutk
-    linkedin_username: chanwut-k
-    x_username: chanwut_k
-    scholar_userid: Q9OsSU8AAAAJ
-    orcid_id: 0000-0002-2884-2221
-    # dblp_url: https://dblp.org/pid/284/8705.html
-    # arxiv: ''
-    # semanticscholar_id: 2047935706
-    # research_gate_profile: Chanwut_Kittivorawong
-    # ieee_id: 37088661022
-    # acm_id: 99660995561
-    # scopus_id: 57221955432
-    # stackoverflow_id: 9174154/chanwutk
+    dblp_url: https://dblp.org/pid/339/9008.html
+    arxiv: ''
+    research_gate_profile: Podshara-Chanrungmaneekul
+    ieee_id: 37089894385
 
 
 # If you want to link only specific pages in your header, uncomment
