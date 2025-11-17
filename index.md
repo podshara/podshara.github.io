@@ -6,8 +6,7 @@ layout: home
   advised by Professor <a href="https://hangkaiyu.github.io/">Kaiyu Hang</a> in the
   <a href="https://robotpilab.github.io/">Rice Robot π Lab</a>.
   My research focuses on <strong>Robot Self-Identification</strong> and <strong>Robot Self-Calibration</strong>,
-  where I develop methods that enable robots to autonomously infer their own kinematics, sensing models,
-  and physical embodiment to support reliable, generalizable real-world manipulation.
+  enabling robots to autonomously understand their own bodies and sensors for reliable real-world manipulation.
 </p>
 
 <p style="margin-bottom: 0; text-align: justify;">
