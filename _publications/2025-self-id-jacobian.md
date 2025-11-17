@@ -7,8 +7,8 @@ authors: [
   [Aaron M. Dollar, https://engineering.yale.edu/research-and-faculty/faculty-directory/aaron-m-dollar]
 ]
 year: 2025
-venue: Paper coming soon
-# links: [
-#   [arXiv, https://arxiv.org/abs/2503.14701]
-# ]
+venue: IROS
+links: [
+  [paper, https://robotpilab.github.io/publication/josh2/Grace_IROS2025.pdf]
+]
 ---

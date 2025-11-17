@@ -8,8 +8,9 @@ authors: [
   [Kaiyu Hang, https://hangkaiyu.github.io/]
 ]
 year: 2025
-venue: Paper coming soon
-# links: [
-#   [arXiv, https://arxiv.org/abs/2503.14701]
-# ]
+venue: RSS
+links: [
+  [rss, 'https://www.roboticsproceedings.org/rss21/p060.pdf'],
+  [video, 'https://www.youtube.com/watch?v=p-hBJvBSqF8']
+]
 ---

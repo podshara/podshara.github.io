@@ -1,21 +1,38 @@
-{% include base_path %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo title=false -%}
+  <link rel="stylesheet" href="assets/css/style.css">
 
-<meta charset="utf-8">
+  <title>{{site.title.firstname}} {{site.title.lastname}}</title>
 
-{% include seo.html %}
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+  <link rel="stylesheet" href="assets/css/academicons.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/brands.min.css">
+  <link rel="stylesheet" href="assets/css/solid.min.css">
+  <!-- <script>
+    (() => {
+      // const page = "{{ page.title }}" || "Home";
+      const title = document.querySelector("title");
+      const name = `${"{{ site.title.firstname }}"} (${"{{ site.title.nickname }}"}) ${"{{ site.title.lastname }}"}`;
+      const cycle = (offset) =>
+        `${name.substring(offset, name.length)} ${name.substring(0, offset)}`;
 
-<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+      let counter = 0;
+      const animateTitle = () => {
+        // title.innerHTML = `${page} | ${cycle(counter)}`;
+        title.innerHTML = `${cycle(counter)}    `;
+        counter = (counter + 1) % name.length;
+      };
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
-
-<meta http-equiv="cleartype" content="on">
+      animateTitle();
+      setInterval(animateTitle, 3000);
+    })();
+  </script> -->
+  
+</head>

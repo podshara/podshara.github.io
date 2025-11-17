@@ -8,8 +8,9 @@ authors: [
   [Kaiyu Hang, https://hangkaiyu.github.io/]
 ]
 year: 2025
-venue: arXiv
+venue: IROS
 links: [
-  [arXiv, https://arxiv.org/abs/2503.14701]
+  [arXiv, https://arxiv.org/abs/2503.14701],
+  [video, 'https://www.youtube.com/watch?v=MfGvsxcbBNw']
 ]
 ---

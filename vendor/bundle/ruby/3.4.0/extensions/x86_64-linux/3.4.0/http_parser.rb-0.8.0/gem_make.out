@@ -1,12 +1,12 @@
-current directory: /home/podshara/work/podshara.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+current directory: /home/podshara/work/new_website/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
 /home/podshara/.asdf/installs/ruby/3.4.1/bin/ruby extconf.rb
 creating Makefile
 
-current directory: /home/podshara/work/podshara.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
-make DESTDIR\= sitearchdir\=./.gem.20250430-3681745-i981s6 sitelibdir\=./.gem.20250430-3681745-i981s6 clean
+current directory: /home/podshara/work/new_website/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20251117-1235192-oxlq3n sitelibdir\=./.gem.20251117-1235192-oxlq3n clean
 
-current directory: /home/podshara/work/podshara.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
-make DESTDIR\= sitearchdir\=./.gem.20250430-3681745-i981s6 sitelibdir\=./.gem.20250430-3681745-i981s6
+current directory: /home/podshara/work/new_website/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20251117-1235192-oxlq3n sitelibdir\=./.gem.20251117-1235192-oxlq3n
 compiling ruby_http_parser.c
 ruby_http_parser.c: In function ‘Parser_alloc_by_type’:
 ruby_http_parser.c:296:3: warning: ‘rb_data_object_wrap_warning’ is deprecated: by TypedData [-Wdeprecated-declarations]
@@ -253,9 +253,9 @@ cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand�
 compiling ryah_http_parser.c
 linking shared-object ruby_http_parser.so
 
-current directory: /home/podshara/work/podshara.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
-make DESTDIR\= sitearchdir\=./.gem.20250430-3681745-i981s6 sitelibdir\=./.gem.20250430-3681745-i981s6 install
-/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20250430-3681745-i981s6
+current directory: /home/podshara/work/new_website/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20251117-1235192-oxlq3n sitelibdir\=./.gem.20251117-1235192-oxlq3n install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20251117-1235192-oxlq3n
 
-current directory: /home/podshara/work/podshara.github.io/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
-make DESTDIR\= sitearchdir\=./.gem.20250430-3681745-i981s6 sitelibdir\=./.gem.20250430-3681745-i981s6 clean
+current directory: /home/podshara/work/new_website/vendor/bundle/ruby/3.4.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20251117-1235192-oxlq3n sitelibdir\=./.gem.20251117-1235192-oxlq3n clean

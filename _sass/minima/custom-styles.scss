@@ -1,0 +1,345 @@
+// Common --------------------------------------------------------------------------------
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+}
+
+.home-item-title {
+  margin-bottom: 0px;
+}
+
+.home-item-description {
+  font-size: $small-font-size;
+  font-weight: lighter;
+  margin-bottom: 0px;
+}
+
+a.link-button {
+  border: 1px $link-base-color solid;
+  border-radius: 5px;
+  padding: 7px 15px 7px 15px;
+}
+a.link-button:hover {
+  background-color: $link-base-color;
+  color: white;
+  text-decoration: none;
+}
+
+@include media-query($on-palm) {
+  .footer-col-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Publication -------------------------------------------------------------------------------
+.home-publications {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.home-publication-container {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 14px;
+  border-radius: 7px/7px;
+  border: thin $border-color-02 solid;
+}
+
+.home-publication-image,
+.home-publication-image-with-border {
+  width: 390px;
+  height: 85px;
+  object-fit: contain;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.home-publication-image-with-border {
+  border-bottom: thin $border-color-02 solid;
+}
+
+.home-publication-content {
+  padding: 10px;
+}
+
+.home-publication-container {
+  .home-item-title {
+    margin-top: 0.5em;
+    align-self: flex-start;
+  }
+}
+
+.home-publication-card-container {
+  margin-bottom: 12px;
+}
+
+.home-publication-title {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.home-publication-author {
+  font-weight: lighter;
+  color: grey !important;
+}
+
+.home-publication-me {
+  font-weight: lighter;
+  color: black;
+}
+
+@include media-query($on-palm) {
+  .home-publication-container {
+    width: 300px;
+  }
+
+  .home-publication-image,
+  .home-publication-image-with-border {
+    width: 300px;
+    height: 240px;
+  }
+}
+
+// Project -------------------------------------------------------------------------------
+.home-projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.home-project-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 14px;
+  border-radius: 4px/4px;
+  border: thin $border-color-02 solid;
+}
+
+.home-project-image,
+.home-project-image-with-border {
+  width: 250px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.home-project-image-with-border {
+  border-bottom: thin $border-color-02 solid;
+}
+
+.home-project-content {
+  padding: 10px;
+}
+
+.home-project-container {
+  .home-item-title {
+    // margin-top: 0.5em;
+    align-self: flex-start;
+    font-weight: bold;
+  }
+}
+
+@include media-query($on-palm) {
+  .home-project-content {
+    padding: 5px;
+    padding-left: 8px;
+  }
+
+  .home-project-container {
+    width: 100%;
+    flex-direction: row;
+    align-items: start;
+    margin: 10px 0 10px 0;
+  }
+
+  .home-project-image,
+  .home-project-image-with-border {
+    width: 120px;
+    height: 100px;
+    // height: 240px;
+  }
+  .home-project-image-with-border {
+    border-bottom: none;
+  }
+}
+
+// Experience ----------------------------------------------------------------------------
+.home-experience-logo {
+  border-radius: 7%;
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  margin: 10px;
+  // filter: inherit;
+}
+
+.home-experience-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  // filter: grayscale(100%);
+  // transition: filter 0.2s;
+}
+
+// .home-experience-container:hover {
+//   filter: none;
+// }
+
+// Introduction --------------------------------------------------------------------------
+.intro-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-container {
+  min-width: 200px;
+  min-height: 200px;
+  margin: 10px 30px 0px 0px;
+}
+
+img.my-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+}
+
+@include media-query($on-palm) {
+  .intro-content {
+    flex-direction: column;
+  }
+  .profile-container {
+    align-self: center;
+    margin: 0 0 20pt 0;
+  }
+  img.my-photo {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// overriding
+// TODO: make my own class
+.social-media-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  li {
+    margin: 5px 5px 5px 5px;
+    a {
+      border: none;
+      color: black;
+      i {
+        font-size: 1.5em;
+      }
+    }
+    a:hover {
+      color: rgb(86, 86, 86);
+    }
+  }
+}
+
+// Header title animation ----------------------------------------------------------------
+.site-title {
+  position: relative;
+  display: inline-block;
+}
+
+#title-nickname,
+#title-firstname,
+#title-lastname {
+  white-space: nowrap;
+}
+
+#title-firstname {
+  position: relative;
+  display: inline-block;
+}
+
+#title-nickname {
+  position: absolute;
+  left: 0;
+}
+
+#title-lastname {
+  position: absolute;
+  left: 0;
+  // Initial transform to prevent overlap with firstname
+  // This will be overridden by JavaScript classes
+  transform: translateX(100px);
+}
+
+.title-slide-in {
+  animation-name: slidein;
+  animation-duration: $title-animation-duration;
+}
+
+.title-slide-out {
+  animation-name: slideout;
+  animation-duration: $title-animation-duration;
+}
+
+.title-stay-left {
+  transform: $title-translate-left;
+}
+
+.title-stay-right {
+  transform: $title-translate-right;
+}
+
+.title-slide-left {
+  animation-name: slideleft;
+  animation-duration: $title-animation-duration;
+}
+
+.title-slide-right {
+  animation-name: slideright;
+  animation-duration: $title-animation-duration;
+}
+
+@keyframes slideleft {
+  from {
+    transform: $title-translate-right;
+  }
+  to {
+    transform: $title-translate-left;
+  }
+}
+
+@keyframes slideright {
+  from {
+    transform: $title-translate-left;
+  }
+  to {
+    transform: $title-translate-right;
+  }
+}
+
+@keyframes slidein {
+  from {
+    bottom: 100%;
+    opacity: 0;
+  }
+  to {
+    bottom: 3%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideout {
+  from {
+    top: 0%;
+    opacity: 1;
+  }
+  to {
+    top: 100%;
+    opacity: 0;
+  }
+}

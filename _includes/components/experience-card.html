@@ -1,0 +1,19 @@
+<li>
+  <div class="home-experience-container">
+    <img src="{{ exp.logo }}" class="home-experience-logo">
+    <div>
+      <span class="post-meta">
+        {%- if exp.start == exp.end -%}
+          {{ exp.start }}
+        {%- else -%}
+          {{ exp.start }} - {{ exp.end }}
+        {%- endif -%}
+      </span>
+      <h3 class="home-item-title">
+        {{ exp.position }}
+      </h3>
+      {{ exp.with }}
+    </div>
+  </div>
+  <p class="home-item-description">{{ exp.description }}</p>
+</li>

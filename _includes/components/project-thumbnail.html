@@ -1,0 +1,25 @@
+<div class="home-project-container">
+  {%- if project.image -%}
+    {%- if project.border -%}
+      <img src="{{ project.image }}" class="home-project-image-with-border" alt="">
+    {%- else -%}
+      <img src="{{ project.image }}" class="home-project-image" alt="">
+    {%- endif -%}
+  {%- else -%}
+    <canvas width=250 height=200 class="home-project-image"></canvas>
+  {%- endif -%}
+  <div class="home-project-content">
+    <span class="home-item-title">
+      {{ project.title }}
+      {%- if project.contribution -%}
+        <sup style="font-size: x-small"> (contribution)</sup>
+      {%- endif -%}
+    </span>
+    <span class="home-item-description">
+      {{ project.description }}
+    </span>
+    {% for lnk in project.links %}
+      &ensp;<span class="home-item-description">{% include components/material-link.html material=lnk %}</span>
+    {% endfor %}
+  </div>
+</div>
