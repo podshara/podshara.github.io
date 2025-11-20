@@ -3,7 +3,7 @@ layout: home
 ---
 <p style="text-align: justify;">
   I am a forth-year Ph.D. student in <a href="https://cs.rice.edu/">Computer Science</a> at Rice University,
-  advised by Professor <a href="https://hangkaiyu.github.io/">Kaiyu Hang</a> in the
+  advised by Assistant Professor <a href="https://hangkaiyu.github.io/">Kaiyu Hang</a> in the
   <a href="https://robotpilab.github.io/">Rice Robot π Lab</a>.
   My research focuses on <strong>Robot Self-Identification</strong> and <strong>Robot Self-Calibration</strong>,
   enabling robots to autonomously understand their own bodies and sensors for reliable real-world manipulation.
