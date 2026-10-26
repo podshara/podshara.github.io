@@ -14,7 +14,6 @@ thumb_fit: cover
 venue: IROS
 links: [
   [paper, https://robotpilab.github.io/publication/josh2/Grace_IROS2025.pdf],
-  [code, https://github.com/grablab/IROS2025RoleOfJacobians],
   [video, 'https://youtu.be/rbBaVNZH8Zk']
 ]
 ---
