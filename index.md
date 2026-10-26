@@ -1,23 +1,26 @@
 ---
 layout: home
+image: /assets/videos/omnistate.jpg
+headline: "Robot learning for precise, contact‑rich manipulation"
+subtitle: "Ph.D. Candidate in Computer Science · Rice University"
+highlights:
+  - value: "0.02 mm"
+    label: "zero-shot insertion"
+  - value: "20,480"
+    label: "simulated robots"
+  - value: "9"
+    label: "RSS/ICRA/IROS papers"
 ---
-<p style="text-align: justify;">
-  I am a forth-year Ph.D. student in <a href="https://cs.rice.edu/">Computer Science</a> at Rice University,
-  advised by Assistant Professor <a href="https://hangkaiyu.github.io/">Kaiyu Hang</a> in the
-  <a href="https://robotpilab.github.io/">Rice Robot π Lab</a>.
-  My research focuses on <strong>Robot Self-Identification</strong> and <strong>Robot Self-Calibration</strong>,
-  enabling robots to autonomously understand their own bodies and sensors for reliable real-world manipulation.
-</p>
+I am a fifth-year Ph.D. candidate at Rice University, advised by Prof. [Kaiyu Hang](https://hangkaiyu.github.io/)
+in the [Rice Robot π Lab](https://robotpilab.github.io/). I work on **reinforcement learning and zero-shot sim-to-real
+transfer for contact-rich manipulation**, and on **robot self-calibration and self-identification**, where robots learn
+about their own bodies, sensors, and workspaces by interacting with them.
+{: .intro-paragraph}
 
-<p style="margin-bottom: 0; text-align: justify;">
-  Prior to Rice, I earned my Bachelor's degree in Computer Science and Engineering from the University of Washington in 2020.
-  During my time at UW, I worked on the <a href="https://mushr.io/">MuSHR</a> robotics platform,
-  developing a Multi-Agent Coordination Planner for Multi-Goal Tasks under Professor
-  <a href="https://homes.cs.washington.edu/~siddh/">Siddhartha S. Srinivasa</a>.
-  I also gained industry experience as an application developer at <strong>Starbucks</strong>,
-  where I contributed to production-scale software systems supporting global operations.
-  Beyond technical work, I served as a volunteer officer for the
-  <a href="https://www.facebook.com/thaisauw/">Thai Students Association</a>,
-  helping organize community events and activities for Thai students at the University of Washington.
-  Outside of research, I enjoy cycling and bouldering.
-</p>
+I am looking for **robot learning research internships** and full-time research scientist / engineer roles after graduation (Fall 2027).
+{: .intro-callout}
+
+Before Rice, I received my B.S. in Computer Science from the University of Washington,
+where I worked on the [MuSHR](https://mushr.io/) platform in the Personal Robotics Lab with Prof. [Siddhartha S. Srinivasa](https://homes.cs.washington.edu/~siddh/).
+Outside of research, I enjoy cycling and bouldering.
+{: .intro-paragraph .intro-secondary}

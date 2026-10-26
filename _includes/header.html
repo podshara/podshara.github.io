@@ -24,10 +24,12 @@
           <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
           {%- endif -%}
         {%- endfor -%} {% endcomment %}
+        <a class="page-link" href="#research">Research</a>
+        <a class="page-link" href="#news">News</a>
         <a class="page-link" href="#publications">Publications</a>
-        <a class="page-link" href="#projects">Projects</a>
         <a class="page-link" href="#experience">Experience</a>
-        <a class="page-link" target="_blank" href="">Resume</a>
+        <a class="page-link" href="#service">Service</a>
+        <a class="page-link" target="_blank" href="{{ site.cv_path }}">CV</a>
         {% comment %} <a class="page-link" href="#education">Education</a> {% endcomment %}
         {% comment %} <a class="page-link" href="#skills">Skills</a> {% endcomment %}
       </div>

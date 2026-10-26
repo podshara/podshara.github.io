@@ -3,39 +3,37 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  <h1 class="page-heading">Hi, welcome!</h1>
-  <div class="intro-content">
+  <section class="hero" id="about">
     <div class="profile-container">
-      <img class="my-photo" src="assets/images/me.jpg" />
-      <!-- <div style="display: flex; flex-direction: row; justify-content: center; padding-top: 15px; padding-bottom: 15px">
-        {%- include components/link-button.html
-          link="http://chanwutk.github.io/resume/resume.pdf"
-          text="Here is my Resume!"
-        -%}
-      </div> -->
+      <img class="my-photo" src="assets/images/me.jpg" alt="Photo of {{ site.author.name }}" />
+      <ul class="intro-links">
+        <li><a href="mailto:{{ site.minima.social_links.email }}" title="Email" aria-label="Email"><i aria-hidden="true" class="fas fa-envelope"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?user={{ site.minima.social_links.scholar_userid }}" title="Google Scholar" aria-label="Google Scholar"><i aria-hidden="true" class="ai ai-google-scholar"></i></a></li>
+        <li><a href="https://github.com/{{ site.minima.social_links.github_username }}" title="GitHub" aria-label="GitHub"><i aria-hidden="true" class="fab fa-github"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/{{ site.minima.social_links.linkedin_username }}" title="LinkedIn" aria-label="LinkedIn"><i aria-hidden="true" class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://orcid.org/{{ site.minima.social_links.orcid_id }}" title="ORCID" aria-label="ORCID"><i aria-hidden="true" class="ai ai-orcid"></i></a></li>
+      </ul>
+      <div class="intro-cv">
+        {%- include components/link-button.html link=site.cv_path text="Download CV" -%}
+      </div>
     </div>
-    <div>
+    <div class="intro-text">
+      <h1 class="hero-headline">{{ page.headline }}</h1>
+      <p class="hero-subtitle">{{ page.subtitle }}</p>
+      {%- if page.highlights -%}
+      <p class="highlight-strip">
+        {%- for stat in page.highlights -%}
+          {%- unless forloop.first -%}<span class="strip-sep" aria-hidden="true">·</span>{%- endunless -%}
+          <span class="strip-item"><strong>{{ stat.value }}</strong> {{ stat.label }}</span>
+        {%- endfor -%}
+      </p>
+      {%- endif -%}
       {{ content }}
     </div>
-  </div>
-{% comment %} 
-  <br/>
-  <h2 id="publications">Publications</h2>
-  <div class="home-publications">
-    {%- assign publications = site.publications | sort: 'year' -%}
-    {%- for publication in publications -%}
-      {%- include components/publication-thumbnail.html publication=publication -%}
-    {%- endfor -%}
-  </div>
-{% endcomment %}
+  </section>
 
-  <br/>
-  <h2 id="projects">Selected Projects</h2>
-  <div class="home-projects">
+  <h2 id="research">Research Highlights</h2>
+  <div class="research-cards">
     {%- assign projects = site.projects | sort: 'priority' -%}
     {%- for project in projects -%}
       {%- if project.hide != true -%}
@@ -44,24 +42,42 @@ layout: default
     {%- endfor -%}
   </div>
 
-  <br/>
+  <h2 id="news">News</h2>
+  <ul class="news-list">
+    {%- for item in site.data.news -%}
+      <li><span class="news-date">{{ item.date }}</span><span class="news-text">{{ item.text }}</span></li>
+    {%- endfor -%}
+  </ul>
+
   <h2 id="publications">Publications</h2>
   <div class="home-publications">
-    {%- assign publications = site.publications | sort: 'year' | reverse -%}
+    {%- assign publications = site.publications | sort: 'order' -%}
+    {%- assign current_year = '' -%}
     {%- for publication in publications -%}
+      {%- assign pub_year = publication.year | append: '' -%}
+      {%- if pub_year != current_year -%}
+        <h3 class="publication-year">{{ pub_year }}</h3>
+        {%- assign current_year = pub_year -%}
+      {%- endif -%}
       {%- include components/publication-card.html publication=publication -%}
     {%- endfor -%}
   </div>
 
-  <br/>
-  <h2 id="experience">Work Experience</h2>
+  <h2 id="experience">Experience</h2>
   <ul class="post-list">
-    {%- assign exps_ends = site.experiences | group_by: 'end' | sort: 'name' | reverse -%}
-    {%- for exps_end in exps_ends -%}
-      {%- assign exps = exps_end.items | sort: 'start' | reverse -%}
-      {%- for exp in exps -%}
-        {%- include components/experience-card.html exp=exp -%}
-      {%- endfor -%}
+    {%- assign exps = site.experiences | sort: 'order' -%}
+    {%- for exp in exps -%}
+      {%- include components/experience-card.html exp=exp -%}
     {%- endfor -%}
   </ul>
+
+  <h2 id="service">Service, Teaching, and Honors</h2>
+  {%- for group in site.data.service -%}
+    <h3 class="service-heading">{{ group.heading }}</h3>
+    <ul class="service-list">
+      {%- for item in group.items -%}
+        <li>{{ item }}</li>
+      {%- endfor -%}
+    </ul>
+  {%- endfor -%}
 </div>

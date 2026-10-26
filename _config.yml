@@ -1,12 +1,16 @@
-title:
-  firstname: Podshara
-  lastname: Chanrungmaneekul
+# A plain string so jekyll-seo-tag emits a readable og:title / twitter:title.
+title: Podshara Chanrungmaneekul
+url: https://podshara.github.io
+logo: /assets/images/me.jpg
 author:
   name: Podshara Chanrungmaneekul
   email: pc45<span>at</span>rice<span>dot</span>edu
-description: > # this means to ignore newlines until "show_excerpts:"
-  This is my personal web page containing my personal and contact information.
-  This page is also a collection of the projects that I have worked on.
+description: >
+  Podshara Chanrungmaneekul is a Ph.D. candidate in Computer Science at Rice University working on
+  robot learning, reinforcement learning, sim-to-real transfer, and robot self-calibration for contact-rich manipulation.
+
+# Compiled from cv/Podshara_Chanrungmaneekul_CV.tex (see cv/build.sh)
+cv_path: assets/pdf/Podshara_Chanrungmaneekul_CV.pdf
 
 show_excerpts: true # set to true to show excerpts on the homepage
 
@@ -17,8 +21,10 @@ minima:
 
   # generate social links in footer
   social_links:
+    email: pc45@rice.edu
+    github_username: podshara
     scholar_userid: UA5y84MAAAAJ
-    orcid: 0009-0007-2858-3729
+    orcid_id: 0009-0007-2858-3729
 
     linkedin_username: p-chanrun
     # new social links
@@ -46,3 +52,16 @@ collections:
 
 plugins:
  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - run-jekyll.sh
+  - cv
+  - README.md
+  - Podshara_Chanrungmaneekul_Robot_Learning_Resume.pdf
+  - "Uni_arc (2).pdf"
+  - "*.webm"
+  - "Self-id_v4 - Made with Clipchamp_1677987557150.mp4"

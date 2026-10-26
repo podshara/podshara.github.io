@@ -1,7 +1,7 @@
 ---
+order: 3
 with: Starbucks
 position: Application Developer
-description: empty
 start: '2020'
 end: '2021'
 logo: assets/images/experiences/starbuck.png

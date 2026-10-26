@@ -8,6 +8,10 @@ authors: [
   [Kaiyu Hang, https://hangkaiyu.github.io/]
 ]
 year: 2025
+order: 6
+thumb: assets/videos/papers/2025-arc-calib.jpg
+video: assets/videos/papers/2025-arc-calib.mp4
+thumb_fit: cover
 venue: IROS
 links: [
   [arXiv, https://arxiv.org/abs/2503.14701],

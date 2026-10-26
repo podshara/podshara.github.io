@@ -1,0 +1,208 @@
+% Podshara Chanrungmaneekul -- CV / resume (robot learning research internships)
+% Build: ./build.sh  (TeX Live in Docker; copies the PDF to ../assets/pdf/)
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{XCharter}
+\usepackage[letterpaper,margin=0.5in,top=0.42in,bottom=0.42in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+
+% Keep the extracted PDF text clean for applicant tracking systems.
+\pdfgentounicode=1
+
+\definecolor{accent}{HTML}{107A28}
+
+\hypersetup{
+  pdftitle={Podshara Chanrungmaneekul - CV},
+  pdfauthor={Podshara Chanrungmaneekul},
+  pdfkeywords={robot learning, reinforcement learning, sim-to-real, contact-rich manipulation, robot calibration}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+
+\titleformat{\section}{\color{accent}\large\bfseries\scshape}{}{0pt}{}[\vspace{-6pt}{\color{accent}\rule{\linewidth}{0.6pt}}]
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.1em,itemsep=1pt,topsep=1pt,parsep=0pt,partopsep=0pt,label=\textbullet}
+\setlist[enumerate]{leftmargin=1.9em,itemsep=1pt,topsep=1pt,parsep=0pt,label={[\arabic*]}}
+
+% \entry{left}{right}: a bold heading line with a right-aligned date or place
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+% \subentry{left}{right}: an italic second line
+\newcommand{\subentry}[2]{\textit{#1}\hfill\textit{#2}\par\vspace{1pt}}
+% \project{title}{dates}
+\newcommand{\project}[2]{\vspace{3pt}\textbf{\color{accent!70!black}#1}\hfill{\small #2}\par}
+% \videolink{url}: a small linked "[video]" tag after a project title
+\newcommand{\videolink}[1]{\,{\small\href{#1}{\color{accent}[video]}}}
+\newcommand{\me}{\textbf{P.~Chanrungmaneekul}}
+\newcommand{\venue}[1]{\textit{#1}}
+
+\begin{document}
+\raggedright
+
+%----------------------------------------------------------------------------------------
+\begin{center}
+  {\LARGE\bfseries\color{accent} Podshara Chanrungmaneekul}\\[3pt]
+  {\small Reinforcement Learning \,|\, Sim-to-Real Transfer \,|\, Contact-Rich Manipulation \,|\, Interactive Estimation \& Calibration}\\[3pt]
+  {\small
+    Houston, TX \,\textbullet\,
+    \href{mailto:pc45@rice.edu}{pc45@rice.edu} \,\textbullet\,
+    \href{https://podshara.github.io}{podshara.github.io} \,\textbullet\,
+    \href{https://scholar.google.com/citations?user=UA5y84MAAAAJ}{Google Scholar} \,\textbullet\,
+    \href{https://www.linkedin.com/in/p-chanrun}{linkedin.com/in/p-chanrun} \,\textbullet\,
+    \href{https://github.com/podshara}{github.com/podshara}}
+\end{center}
+\vspace{-6pt}
+
+%----------------------------------------------------------------------------------------
+\section{Summary}
+Ph.D. candidate in Computer Science at Rice University (expected Fall 2027) building robots that resolve their own
+uncertainty in contact-rich manipulation through reinforcement learning, interactive estimation, and self-calibration.
+Leading OmniState: an RL policy, trained only in simulation on 20,480 parallel Isaac Lab robots, that inserts pegs
+zero-shot on a real Franka at a 0.02\,mm tolerance (5$\times$ tighter than training) with joint-torque-only sensing. 9 peer-reviewed papers at RSS, ICRA, and IROS; 4 first-author works (IROS 2023, 2024, 2025; T-RO submission).
+Seeking robot learning research internships and full-time Research Scientist / Engineer roles after graduation.
+
+%----------------------------------------------------------------------------------------
+\section{Education}
+\entry{Rice University}{Houston, TX}
+\subentry{Ph.D. Candidate, Computer Science \textbullet\ Advisor: Prof.\ Kaiyu Hang}{Aug.\ 2022 -- Fall 2027 (expected)}
+\entry{University of Washington}{Seattle, WA}
+\subentry{B.S., Computer Science \textbullet\ Personal Robotics Lab, Advisor: Prof.\ Siddhartha S.\ Srinivasa}{Sept.\ 2016 -- June 2020}
+
+%----------------------------------------------------------------------------------------
+\section{Research Experience}
+\entry{Rice University, Robot $\pi$ Lab}{Houston, TX}
+\subentry{Graduate Researcher, advised by Prof.\ Kaiyu Hang}{Aug.\ 2022 -- Present}
+
+\project{OmniState: Zero-Shot Sim-to-Real Reinforcement Learning for Precision Insertion\videolink{https://podshara.github.io/assets/videos/omnistate.mp4}}{2025 -- Present}
+\begin{itemize}
+  \item Lead the project end to end; the policy inserts pegs zero-shot on a real Franka FR3 at the 0.02\,mm tolerance
+    (trained only to 0.1\,mm), with a loose board, an unknown grasp, and joint-torque-only contact sensing.
+  \item Proposed OmniState: simulated instances of one robot with different hidden poses share one action, so the policy
+    learns actions that work for every pose it cannot yet rule out; paired with a contact-based pose estimator.
+  \item Trained recurrent 6-D pose and impedance policies with multi-objective MPO and privileged critics on 20,480
+    parallel Isaac Lab robots across five GPUs, using a competence-gated curriculum.
+  \item Built the ROS / libfranka deployment stack: 500\,Hz joint-torque contact detection (19 of 20 held-out touches),
+    multi-view board localization, and 1\,kHz impedance control.
+\end{itemize}
+
+\project{UniARC-Calib and ARC-Calib: Autonomous Markerless Robot Calibration\videolink{https://www.youtube.com/watch?v=MfGvsxcbBNw}}{2024 -- Present}
+\begin{itemize}
+  \item Created ARC-Calib (IROS 2025), a fully autonomous camera-to-robot calibration framework in which exploratory
+    robot motions generate trackable image trajectories, removing fiducial markers, CAD models, and learned detectors.
+  \item Generalized it in UniARC-Calib to one geometric solver for both eye-in-hand and eye-to-hand setups, with a
+    closed-loop active-exploration strategy that selects informative joint sweeps and stops when a confidence test passes.
+  \item On a Franka Research 3, reached 6.01\,px median held-out reprojection error eye-to-hand, the lowest of 10
+    marker-based and markerless methods, and 3.66\,px eye-in-hand, within 1.1\,px of the best marker-based method and
+    6$\times$ lower than the best markerless baseline. First-author manuscript submitted to IEEE T-RO.
+\end{itemize}
+
+\project{Interactive Robot-Environment Self-Calibration (IROS 2024)}{2023 -- 2024}
+\begin{itemize}
+  \item Compliant exploratory actions that self-calibrate the robot to its workspace using only built-in force/torque sensing.
+\end{itemize}
+
+\project{Online Self-Identification and MPC for Dexterous In-Hand Manipulation (IROS 2023)\videolink{https://www.youtube.com/watch?v=4FQ2193q1kk}}{2022 -- 2023}
+\begin{itemize}
+  \item Online non-parametric self-identification and MPC for an underactuated Yale Model O hand from as few as 15 samples.
+\end{itemize}
+
+\vspace{2pt}
+\entry{University of Washington, Personal Robotics Lab}{Seattle, WA}
+\subentry{Undergraduate Researcher, continued after graduation (Prof.\ S.\ S.\ Srinivasa): multi-agent coordination, MuSHR}{2020 -- 2021}
+
+%----------------------------------------------------------------------------------------
+\section{Publications}
+{\small
+\textbf{Journal submissions and manuscripts}\par\nopagebreak
+\begin{enumerate}
+  \item \me, Y.~Chen, K.~Hang. ``OmniState: A Shared-Action State Representation for Contact-Rich Manipulation under Uncertainty.''
+    \venue{Manuscript in preparation}, 2026.
+  \item \me, Y.~Chen, J.~T.~Grace, A.~M.~Dollar, K.~Hang. ``UniARC-Calib: Unifying Autonomous Markerless Robot
+    Calibration for Eye-in-Hand and Eye-to-Hand Setups.'' \venue{Submitted to IEEE Transactions on Robotics (T-RO)}, 2026.
+\end{enumerate}
+
+\textbf{Conference papers}\par\nopagebreak
+\begin{enumerate}[resume]
+  \item \me, Y.~Chen, J.~T.~Grace, A.~M.~Dollar, K.~Hang. \href{https://arxiv.org/abs/2503.14701}{``ARC-Calib: Autonomous Markerless Camera-to-Robot
+    Calibration via Exploratory Robot Motions.''} \venue{IEEE/RSJ Int.\ Conf.\ on Intelligent Robots and Systems (IROS)}, 2025.
+  \item Y.~Chen, K.~Kimble, H.~H.~Qian, \me, R.~Seney, K.~Hang. \href{https://www.roboticsproceedings.org/rss21/p060.pdf}{``Robust Peg-in-Hole Assembly under Uncertainties via
+    Compliant and Interactive Contact-Rich Manipulation.''} \venue{Robotics: Science and Systems (RSS)}, 2025.
+  \item H.~H.~Qian, Y.~Chen, G.~Wang, \me, K.~Hang. \href{https://arxiv.org/abs/2507.10776}{``rt-RISeg: Real-Time Model-Free Robot Interactive Segmentation
+    for Active Instance-Level Object Understanding.''} \venue{IROS}, 2025.
+  \item J.~T.~Grace, \me, K.~Hang, A.~M.~Dollar. \href{https://robotpilab.github.io/publication/josh2/Grace_IROS2025.pdf}{``On the Role of Jacobians in Robust Manipulation.''} \venue{IROS}, 2025.
+  \item H.~Webb, \me, S.~Yuan, K.~Hang. \href{https://arxiv.org/abs/2403.13132}{``Wearable Roller Rings to Enable Robot Dexterous In-Hand Manipulation
+    through Active Surfaces.''} \venue{IROS}, 2025.
+  \item \me, K.~Ren, J.~T.~Grace, A.~M.~Dollar, K.~Hang. \href{https://arxiv.org/abs/2403.13144}{``Interactive Robot-Environment Self-Calibration via
+    Compliant Exploratory Actions.''} \venue{IROS}, 2024.
+  \item J.~T.~Grace, \me, K.~Hang, A.~M.~Dollar. \href{https://ieeexplore.ieee.org/document/10611052}{``Direct Self-Identification of Inverse Jacobians for Dexterous
+    Manipulation Through Particle Filtering.''} \venue{IEEE Int.\ Conf.\ on Robotics and Automation (ICRA)}, 2024.
+  \item \me, K.~Ren, J.~T.~Grace, A.~M.~Dollar, K.~Hang. \href{https://arxiv.org/abs/2307.10033}{``Non-Parametric Self-Identification and Model Predictive
+    Control of Dexterous In-Hand Manipulation.''} \venue{IROS}, 2023.
+  \item K.~Ren, \me, L.~E.~Kavraki, K.~Hang. \href{https://arxiv.org/abs/2302.04360}{``Kinodynamic Rapidly-Exploring Random Forest for Rearrangement-Based
+    Nonprehensile Manipulation.''} \venue{ICRA}, 2023.
+\end{enumerate}
+
+\textbf{Preprints}\par\nopagebreak
+\begin{enumerate}[resume]
+  \item H.~Qian, Y.~Chen, Y.~Xie, K.~Ren, \me, G.~Wang, B.~Wen, C.~Wei, K.~Hang. \href{https://arxiv.org/abs/2609.03199}{``RoboTok: A Scalable Data Engine
+    for Internet Demonstration Video Retrieval and Dexterous Manipulation Learning.''} \venue{arXiv:2609.03199}, 2026.
+  \item G.~Wang, K.~Ren, A.~S.~Morgan, Y.~Chen, H.~H.~Qian, \me, K.~Hang. \href{https://arxiv.org/abs/2606.17385}{``EgoInfinity: A Web-Scale 4D Hand-Object
+    Interaction Data Engine for Any-View Robot Retargeting and Video-to-Action Robot Learning.''}
+    \venue{arXiv:2606.17385}, 2026.
+  \item Y.~Chen, K.~Kimble, E.~H.~Adelson, T.~Asfour, \me, et al.\ (23 authors). \href{https://arxiv.org/abs/2603.04363}{``ManipulationNet: An Infrastructure
+    for Benchmarking Real-World Robot Manipulation with Physical Skill Challenges and Embodied Multimodal Reasoning.''}
+    \venue{arXiv:2603.04363}, 2026. Under review at \venue{Science Robotics}.
+\end{enumerate}
+}
+
+%----------------------------------------------------------------------------------------
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l@{\hspace{6pt}}>{\raggedright\arraybackslash}X@{}}
+  \textbf{Robot learning} & Reinforcement learning (multi-objective and constrained RL; MPO, SAC, PPO), behavior cloning and
+    imitation learning, Robust Active Learning (RoAL), vision-language-action (VLA) model deployment and evaluation,
+    sim-to-real transfer, domain randomization, curriculum learning, recurrent policies, privileged critics, set encoders \\
+  \textbf{Robotics \& control} & Contact-rich and dexterous manipulation, Cartesian impedance control, force and joint-torque
+    sensing, state estimation, system identification, model predictive control, hand-eye calibration \\
+  \textbf{Programming \& ML} & Python, C++, MATLAB, Bash; PyTorch, NumPy, SciPy, CuPy, Eigen, OpenCV, Open3D \\
+  \textbf{Simulation \& systems} & NVIDIA Isaac Lab, PhysX, Isaac Gym, MuJoCo, PyBullet, Gazebo, ROS / ROS 2, libfranka,
+    multi-GPU cluster training, Linux, Docker, CMake, Git \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+\section{Robotics Leadership and Service}
+\entry{ManipulationNet, Founding Developer Team}{2025 -- Present}
+\begin{itemize}
+  \item Co-developed standardized physical-skill protocols for block arrangement and tabletop management in a global
+    benchmark launched with NIST, supporting reproducible real-world evaluation across heterogeneous robot platforms.
+\end{itemize}
+\entry{Robotic Grasping and Manipulation Competition (RGMC), In-Hand Manipulation Organizer}{2024 -- 2025}
+\begin{itemize}
+  \item Organized the in-hand manipulation subtrack of the 9th and 10th competitions at ICRA; defined task
+    specifications and objective evaluation metrics for robotic dexterity.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+\section{Industry Experience}
+\textbf{Starbucks}, Application Developer (2020 -- 2021) and Cloud Service Engineer Intern (2019): production data
+pipelines (Azure, Databricks, Hive, Oracle) and a cloud query API with CI/CD. \textbf{Agoda}, SWE Intern (2017).
+
+%----------------------------------------------------------------------------------------
+\section{Teaching and Honors}
+\begin{itemize}
+  \item \textbf{Teaching Assistant}, Rice University: Senior Design in a Robotized World; Probabilistic Algorithms and
+    Data Structures; Operating Systems and Concurrent Programming.
+  \item \textbf{Royal Thai Government Scholarship} (2015): full tuition and stipend from B.S. through Ph.D.
+  \item \textbf{Competitive programming}: ACM-ICPC UW qualifier 1st-place team and Pacific Northwest Regional 16th-place team
+    (2016); Thailand Olympiad in Informatics Gold Medal (2014).
+\end{itemize}
+
+\end{document}

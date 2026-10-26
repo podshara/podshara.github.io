@@ -11,3 +11,10 @@ Gemfile.lock
 # Ingore files created by npm
 node_modules
 package-lock.json
+# Local working files (manuscripts under review, old resume)
+Uni_arc*.pdf
+Podshara_Chanrungmaneekul_Robot_Learning_Resume.pdf
+cv/build/
+# Raw source videos (clips for the site are in assets/videos/)
+/*.webm
+/*.mp4

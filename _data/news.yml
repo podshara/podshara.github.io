@@ -1,0 +1,19 @@
+# Newest first. `text` is HTML.
+- date: Oct 2026
+  text: '<strong>OmniState</strong> policies, trained only in simulation, insert pegs at the 0.02 mm tolerance on a real Franka, zero-shot.'
+- date: Sep 2026
+  text: '<a href="https://arxiv.org/abs/2609.03199">RoboTok</a>, a data engine for retrieving internet demonstration videos for dexterous manipulation learning, is on arXiv.'
+- date: Jul 2026
+  text: 'First-author journal paper <strong>UniARC-Calib</strong> submitted to IEEE Transactions on Robotics (T-RO).'
+- date: Jun 2026
+  text: '<a href="https://www.nist.gov/news-events/news/2026/06/spotlight-test-your-robots-skills-nists-global-online-competition">ManipulationNet featured in a NIST Spotlight</a>.'
+- date: Jun 2026
+  text: '<a href="https://arxiv.org/abs/2606.17385">EgoInfinity</a>, a web-scale 4D hand-object interaction data engine, is on arXiv.'
+- date: Mar 2026
+  text: 'The <a href="https://arxiv.org/abs/2603.04363">ManipulationNet paper</a> is on arXiv.'
+- date: Oct 2025
+  text: '<a href="https://manipulation-net.org/">ManipulationNet</a> launched with NIST for real-world manipulation benchmarking at scale.'
+- date: Jun 2025
+  text: 'Four papers accepted to IROS 2025, including first-author <a href="https://arxiv.org/abs/2503.14701">ARC-Calib</a>.'
+- date: Apr 2025
+  text: '<a href="https://www.roboticsproceedings.org/rss21/p060.pdf">Robust peg-in-hole assembly</a> accepted to RSS 2025.'

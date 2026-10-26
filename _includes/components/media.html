@@ -1,0 +1,11 @@
+{%- comment -%}
+  A muted looping video or an image. Videos carry `controls` and `preload="none"` so they work without
+  JavaScript; assets/js/media.js hides the controls and autoplays them while on screen.
+  Params: video, poster, image, fit ("cover" or "contain"), alt, class.
+{%- endcomment -%}
+{%- assign fit = include.fit | default: 'cover' -%}
+{%- if include.video -%}
+<video class="{{ include.class }} fit-{{ fit }}" muted loop playsinline controls preload="none" poster="{{ include.poster }}" src="{{ include.video }}" aria-label="{{ include.alt }}"></video>
+{%- else -%}
+<img class="{{ include.class }} fit-{{ fit }}" src="{{ include.image }}" alt="{{ include.alt }}" loading="lazy">
+{%- endif -%}

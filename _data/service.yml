@@ -1,0 +1,13 @@
+# `text` is HTML.
+- heading: Leadership and Service
+  items:
+    - '<strong>ManipulationNet</strong>, founding developer team (2025 – present): standardized physical-skill protocols for block arrangement and tabletop management.'
+    - '<strong>Robotic Grasping and Manipulation Competition</strong>, organizer of the in-hand manipulation subtrack, 9th and 10th RGMC (2024 – 2025).'
+    - '<strong>Thai Students Association</strong>, University of Washington, volunteer officer.'
+- heading: Teaching
+  items:
+    - 'Teaching Assistant, Rice University: Senior Design in a Robotized World; Probabilistic Algorithms and Data Structures; Operating Systems and Concurrent Programming.'
+- heading: Honors
+  items:
+    - '<strong>Royal Thai Government Scholarship</strong> (2015): full tuition and stipend from B.S. through Ph.D.'
+    - '<strong>Competitive programming</strong>: ACM-ICPC UW qualifier, 1st-place team, and Pacific Northwest Regional, 16th place (2016); Thailand Olympiad in Informatics, Gold Medal (2014).'

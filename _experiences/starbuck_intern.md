@@ -1,7 +1,7 @@
 ---
+order: 4
 with: Starbucks
 position: Cloud Service Engineer Intern
-description: empty
 start: '2019'
 end: '2019'
 logo: assets/images/experiences/starbuck.png

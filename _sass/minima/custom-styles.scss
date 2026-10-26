@@ -1,10 +1,52 @@
 // Common --------------------------------------------------------------------------------
+$accent-tint: lighten($accent-color, 64%);
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   background-color: white;
+}
+
+// Keep anchored section headings clear of the top of the viewport.
+h2[id] {
+  scroll-margin-top: 16px;
+}
+
+.site-header {
+  border-top: 5px solid $accent-color;
+}
+
+.site-nav .page-link:hover {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+// Six nav links need tighter spacing to stay on the same line as the name.
+@media screen and (min-width: $on-medium) {
+  .site-nav .page-link {
+    font-size: 0.95rem;
+
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+}
+
+.home > h2 {
+  margin-top: 2.2em;
+  margin-bottom: 0.7em;
+}
+
+.home > h2::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background-color: $accent-color;
 }
 
 .home-item-title {
@@ -18,12 +60,14 @@ body {
 }
 
 a.link-button {
-  border: 1px $link-base-color solid;
+  display: inline-block;
+  border: 1px $accent-color solid;
   border-radius: 5px;
   padding: 7px 15px 7px 15px;
+  color: $accent-color;
 }
 a.link-button:hover {
-  background-color: $link-base-color;
+  background-color: $accent-color;
   color: white;
   text-decoration: none;
 }
@@ -35,139 +79,256 @@ a.link-button:hover {
   }
 }
 
-// Publication -------------------------------------------------------------------------------
-.home-publications {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+// News ----------------------------------------------------------------------------------
+.news-list {
+  list-style: none;
+  margin-left: 0;
 
-.home-publication-container {
-  width: 390px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 14px;
-  border-radius: 7px/7px;
-  border: thin $border-color-02 solid;
-}
-
-.home-publication-image,
-.home-publication-image-with-border {
-  width: 390px;
-  height: 85px;
-  object-fit: contain;
-  border-radius: 6px 6px 0px 0px;
-}
-
-.home-publication-image-with-border {
-  border-bottom: thin $border-color-02 solid;
-}
-
-.home-publication-content {
-  padding: 10px;
-}
-
-.home-publication-container {
-  .home-item-title {
-    margin-top: 0.5em;
-    align-self: flex-start;
+  li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6px;
   }
+}
+
+.news-date {
+  flex: 0 0 92px;
+  white-space: nowrap;
+  font-weight: 600;
+  color: $accent-color;
+}
+
+.news-text {
+  flex: 1;
+}
+
+@include media-query($on-palm) {
+  .news-list li {
+    flex-direction: column;
+  }
+  .news-date {
+    flex-basis: auto;
+  }
+}
+
+// Publication -------------------------------------------------------------------------------
+.publication-year {
+  margin: 1.1em 0 0.5em 0;
+  padding-bottom: 2px;
+  font-size: 1.05rem;
+  color: $accent-color;
+  border-bottom: 1px solid $border-color-01;
 }
 
 .home-publication-card-container {
-  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.publication-thumb {
+  flex: 0 0 168px;
+  height: 95px;
+  border: thin solid $border-color-02;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: white;
+
+  .media {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.publication-body {
+  flex: 1;
+  min-width: 0;
+}
+
+@include media-query($on-palm) {
+  .home-publication-card-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .publication-thumb {
+    flex-basis: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .home-publication-title {
-  margin-bottom: 0;
+  margin-bottom: 2px;
   font-weight: bold;
 }
 
+.home-publication-authors {
+  font-size: 0.95em;
+}
+
+.author-sep {
+  color: lightgray;
+}
+
 .home-publication-author {
-  font-weight: lighter;
-  color: grey !important;
+  color: #5f5f5f !important;
 }
 
 .home-publication-me {
-  font-weight: lighter;
-  color: black;
+  white-space: nowrap;
+  font-weight: 600;
+  color: $text-color;
+  border-bottom: 2px solid $accent-color;
 }
 
-@include media-query($on-palm) {
-  .home-publication-container {
-    width: 300px;
-  }
-
-  .home-publication-image,
-  .home-publication-image-with-border {
-    width: 300px;
-    height: 240px;
-  }
-}
-
-// Project -------------------------------------------------------------------------------
-.home-projects {
+.home-publication-meta {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-top: 2px;
 }
 
-.home-project-container {
-  width: 250px;
+.home-publication-venue {
+  font-weight: 600;
+}
+
+.status,
+.award {
+  font-size: 0.78em;
+  font-weight: 600;
+  padding: 0 7px;
+  border-radius: 10px;
+  color: $accent-color;
+  background-color: $accent-tint;
+  border: 1px solid lighten($accent-color, 45%);
+}
+
+a.home-publication-material {
+  font-size: 0.85em;
+  padding: 0 7px;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  color: $accent-color;
+}
+
+a.home-publication-material:hover {
+  background-color: $accent-color;
+  color: white;
+  text-decoration: none;
+}
+
+// Research highlights --------------------------------------------------------------------
+.research-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.research-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 14px;
-  border-radius: 4px/4px;
-  border: thin $border-color-02 solid;
+  border: thin solid $border-color-02;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.home-project-image,
-.home-project-image-with-border {
-  width: 250px;
-  height: 200px;
-  object-fit: contain;
-  border-radius: 4px 4px 0px 0px;
+.research-card:hover {
+  border-color: $accent-color;
+  box-shadow: 0 3px 14px rgba(16, 122, 40, 0.14);
 }
 
-.home-project-image-with-border {
-  border-bottom: thin $border-color-02 solid;
-}
+.research-media {
+  aspect-ratio: 4 / 3;
+  background-color: #f4f5f4;
+  border-bottom: thin solid $border-color-02;
 
-.home-project-content {
-  padding: 10px;
-}
-
-.home-project-container {
-  .home-item-title {
-    // margin-top: 0.5em;
-    align-self: flex-start;
-    font-weight: bold;
+  .media {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
+}
+
+.fit-cover {
+  object-fit: cover;
+}
+
+.fit-contain {
+  object-fit: contain;
+  background-color: white;
+}
+
+.research-media .fit-contain {
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+
+.research-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px 16px 16px;
+}
+
+.research-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.research-subtitle {
+  margin: 0;
+  font-size: 0.85em;
+  color: #5f5f5f;
+}
+
+.research-headline {
+  margin: 0;
+  font-weight: 600;
+  color: $accent-color;
+  line-height: 1.35;
+}
+
+.research-description {
+  margin: 0;
+  font-size: $small-font-size;
+  line-height: 1.5;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin: 2px 0 0 0;
+  list-style: none;
+
+  li {
+    font-size: 0.75em;
+    padding: 0 8px;
+    border-radius: 10px;
+    background-color: $accent-tint;
+    color: darken($accent-color, 6%);
+  }
+}
+
+.home-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-top: 4px;
 }
 
 @include media-query($on-palm) {
-  .home-project-content {
-    padding: 5px;
-    padding-left: 8px;
-  }
-
-  .home-project-container {
-    width: 100%;
-    flex-direction: row;
-    align-items: start;
-    margin: 10px 0 10px 0;
-  }
-
-  .home-project-image,
-  .home-project-image-with-border {
-    width: 120px;
-    height: 100px;
-    // height: 240px;
-  }
-  .home-project-image-with-border {
-    border-bottom: none;
+  .research-cards {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -178,55 +339,155 @@ a.link-button:hover {
   height: 60px;
   align-self: center;
   margin: 10px;
-  // filter: inherit;
 }
 
 .home-experience-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  // filter: grayscale(100%);
-  // transition: filter 0.2s;
 }
 
-// .home-experience-container:hover {
-//   filter: none;
-// }
+// Service, teaching, honors ---------------------------------------------------------------
+.service-heading {
+  margin: 1em 0 0.3em 0;
+  font-size: 1.05rem;
+  color: $accent-color;
+}
+
+.service-list {
+  margin-bottom: 0.5em;
+
+  li {
+    margin-bottom: 4px;
+  }
+}
 
 // Introduction --------------------------------------------------------------------------
-.intro-content {
+.hero {
   display: flex;
   flex-direction: row;
+  margin-top: 8px;
 }
 
+.hero-headline {
+  margin: 0 0 2px 0;
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  margin: 0 0 14px 0;
+  font-weight: 600;
+  color: $accent-color;
+}
+
+.highlight-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 0;
+  margin: 0 0 14px 0;
+  font-size: 0.86rem;
+  color: #4a4a4a;
+
+  strong {
+    color: $accent-color;
+    font-weight: 700;
+  }
+}
+
+.strip-item {
+  white-space: nowrap;
+}
+
+.strip-sep {
+  margin: 0 7px;
+  color: #b5b5b5;
+}
+
+// On narrow screens the strip wraps, so list the items one per line without separators.
+@include media-query($on-palm) {
+  .highlight-strip {
+    flex-direction: column;
+  }
+  .strip-sep {
+    display: none;
+  }
+}
+
+.intro-secondary {
+  font-size: $small-font-size;
+  color: #4a4a4a;
+}
+
+
 .profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-width: 200px;
-  min-height: 200px;
-  margin: 10px 30px 0px 0px;
+  margin: 4px 30px 0px 0px;
 }
 
 img.my-photo {
   width: 200px;
   height: 200px;
   border-radius: 5%;
+  object-fit: cover;
+}
+
+.intro-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  list-style: none;
+  margin: 12px 0 10px 0;
+
+  a {
+    color: $text-color;
+    font-size: 1.35em;
+  }
+
+  a:hover {
+    color: $accent-color;
+    text-decoration: none;
+  }
+}
+
+.intro-paragraph {
+  text-align: left;
+}
+
+.intro-callout {
+  padding: 8px 12px;
+  border-left: 4px solid $accent-color;
+  border-radius: 0 4px 4px 0;
+  background-color: $accent-tint;
 }
 
 @include media-query($on-palm) {
-  .intro-content {
+  .hero {
     flex-direction: column;
+  }
+  .hero-headline {
+    font-size: 1.5rem;
   }
   .profile-container {
     align-self: center;
     margin: 0 0 20pt 0;
   }
   img.my-photo {
-    width: 300px;
-    height: 300px;
+    width: 140px;
+    height: 140px;
+  }
+  .intro-paragraph {
+    text-align: left;
   }
 }
 
 // overriding
-// TODO: make my own class
 .social-media-list {
   display: flex;
   justify-content: center;
@@ -241,7 +502,7 @@ img.my-photo {
       }
     }
     a:hover {
-      color: rgb(86, 86, 86);
+      color: $accent-color;
     }
   }
 }

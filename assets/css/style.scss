@@ -2,6 +2,13 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+// Accent color used for links and highlights across the site.
+$accent-color: #107a28;
+
+$lm-link-base-color: $accent-color;
+$lm-link-visited-color: $accent-color;
+$lm-link-hover-color: darken($accent-color, 8%);
+
 @import
   "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";

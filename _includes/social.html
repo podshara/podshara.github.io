@@ -2,7 +2,7 @@
 
 <ul class="social-media-list">
   {% if social.email %}
-    <li><a rel="me" href="mailto:{{ social.email | encode_email }}" title="email"><i class="fas fa-envelope"></i></a></li>
+    <li><a rel="me" href="mailto:{{ social.email }}" title="email"><i class="fas fa-envelope"></i></a></li>
   {% endif %}
   {% if social.telegram_username %}
     <li><a rel="me" href="https://telegram.me/{{ social.telegram_username }}" title="telegram"><i class="fab fa-telegram"></i></a></li>
