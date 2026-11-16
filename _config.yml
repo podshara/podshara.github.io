@@ -1,0 +1,66 @@
+# A plain string so jekyll-seo-tag emits a readable og:title / twitter:title.
+title: Podshara Chanrungmaneekul
+url: https://podshara.github.io
+logo: /assets/images/me.jpg
+author:
+  name: Podshara Chanrungmaneekul
+  email: pc45<span>at</span>rice<span>dot</span>edu
+description: >
+  Podshara Chanrungmaneekul is a Ph.D. candidate in Computer Science at Rice University working on
+  robot learning, reinforcement learning, sim-to-real transfer, and robot self-calibration for contact-rich manipulation.
+
+# Compiled from cv/Podshara_Chanrungmaneekul_CV.tex (see cv/build.sh)
+cv_path: assets/pdf/Podshara_Chanrungmaneekul_CV.pdf
+
+show_excerpts: true # set to true to show excerpts on the homepage
+
+# Minima date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    email: pc45@rice.edu
+    scholar_userid: UA5y84MAAAAJ
+    orcid_id: 0009-0007-2858-3729
+
+    linkedin_username: p-chanrun
+    # new social links
+    dblp_url: https://dblp.org/pid/339/9008.html
+    arxiv: ''
+    research_gate_profile: Podshara-Chanrungmaneekul
+    ieee_id: 37089894385
+
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+# header_pages:
+# - about.md
+
+# Build settings
+# theme: minima
+
+collections:
+  projects:
+    output: false
+  experiences:
+    output: false
+  publications:
+    output: false
+
+plugins:
+ - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - run-jekyll.sh
+  - cv
+  - README.md
+  - Podshara_Chanrungmaneekul_Robot_Learning_Resume.pdf
+  - "Uni_arc (2).pdf"
+  - "*.webm"
+  - "Self-id_v4 - Made with Clipchamp_1677987557150.mp4"

@@ -1,0 +1,606 @@
+// Common --------------------------------------------------------------------------------
+$accent-tint: lighten($accent-color, 64%);
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+}
+
+// Keep anchored section headings clear of the top of the viewport.
+h2[id] {
+  scroll-margin-top: 16px;
+}
+
+.site-header {
+  border-top: 5px solid $accent-color;
+}
+
+.site-nav .page-link:hover {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+// Six nav links need tighter spacing to stay on the same line as the name.
+@media screen and (min-width: $on-medium) {
+  .site-nav .page-link {
+    font-size: 0.95rem;
+
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+}
+
+.home > h2 {
+  margin-top: 2.2em;
+  margin-bottom: 0.7em;
+}
+
+.home > h2::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background-color: $accent-color;
+}
+
+.home-item-title {
+  margin-bottom: 0px;
+}
+
+.home-item-description {
+  font-size: $small-font-size;
+  font-weight: lighter;
+  margin-bottom: 0px;
+}
+
+a.link-button {
+  display: inline-block;
+  border: 1px $accent-color solid;
+  border-radius: 5px;
+  padding: 7px 15px 7px 15px;
+  color: $accent-color;
+}
+a.link-button:hover {
+  background-color: $accent-color;
+  color: white;
+  text-decoration: none;
+}
+
+@include media-query($on-palm) {
+  .footer-col-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// News ----------------------------------------------------------------------------------
+.news-list {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6px;
+  }
+}
+
+.news-date {
+  flex: 0 0 92px;
+  white-space: nowrap;
+  font-weight: 600;
+  color: $accent-color;
+}
+
+.news-text {
+  flex: 1;
+}
+
+@include media-query($on-palm) {
+  .news-list li {
+    flex-direction: column;
+  }
+  .news-date {
+    flex-basis: auto;
+  }
+}
+
+// Publication -------------------------------------------------------------------------------
+.publication-year {
+  margin: 1.1em 0 0.5em 0;
+  padding-bottom: 2px;
+  font-size: 1.05rem;
+  color: $accent-color;
+  border-bottom: 1px solid $border-color-01;
+}
+
+.home-publication-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.publication-thumb {
+  flex: 0 0 168px;
+  height: 95px;
+  border: thin solid $border-color-02;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: white;
+
+  .media {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.publication-body {
+  flex: 1;
+  min-width: 0;
+}
+
+@include media-query($on-palm) {
+  .home-publication-card-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .publication-thumb {
+    flex-basis: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.home-publication-title {
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.home-publication-authors {
+  font-size: 0.95em;
+}
+
+.author-sep {
+  color: lightgray;
+}
+
+.home-publication-author {
+  color: #5f5f5f !important;
+}
+
+.home-publication-me {
+  white-space: nowrap;
+  font-weight: 600;
+  color: $text-color;
+  border-bottom: 2px solid $accent-color;
+}
+
+.home-publication-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-top: 2px;
+}
+
+.home-publication-venue {
+  font-weight: 600;
+}
+
+.status,
+.award {
+  font-size: 0.78em;
+  font-weight: 600;
+  padding: 0 7px;
+  border-radius: 10px;
+  color: $accent-color;
+  background-color: $accent-tint;
+  border: 1px solid lighten($accent-color, 45%);
+}
+
+a.home-publication-material {
+  font-size: 0.85em;
+  padding: 0 7px;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  color: $accent-color;
+}
+
+a.home-publication-material:hover {
+  background-color: $accent-color;
+  color: white;
+  text-decoration: none;
+}
+
+// Research highlights --------------------------------------------------------------------
+.research-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.research-card {
+  display: flex;
+  flex-direction: column;
+  border: thin solid $border-color-02;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.research-card:hover {
+  border-color: $accent-color;
+  box-shadow: 0 3px 14px rgba(16, 122, 40, 0.14);
+}
+
+.research-media {
+  aspect-ratio: 4 / 3;
+  background-color: #f4f5f4;
+  border-bottom: thin solid $border-color-02;
+
+  .media {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.fit-cover {
+  object-fit: cover;
+}
+
+.fit-contain {
+  object-fit: contain;
+  background-color: white;
+}
+
+.research-media .fit-contain {
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+
+.research-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px 16px 16px;
+}
+
+.research-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.research-subtitle {
+  margin: 0;
+  font-size: 0.85em;
+  color: #5f5f5f;
+}
+
+.research-headline {
+  margin: 0;
+  font-weight: 600;
+  color: $accent-color;
+  line-height: 1.35;
+}
+
+.research-description {
+  margin: 0;
+  font-size: $small-font-size;
+  line-height: 1.5;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin: 2px 0 0 0;
+  list-style: none;
+
+  li {
+    font-size: 0.75em;
+    padding: 0 8px;
+    border-radius: 10px;
+    background-color: $accent-tint;
+    color: darken($accent-color, 6%);
+  }
+}
+
+.home-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-top: 4px;
+}
+
+@include media-query($on-palm) {
+  .research-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Experience ----------------------------------------------------------------------------
+.home-experience-logo {
+  border-radius: 7%;
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  margin: 10px;
+}
+
+.home-experience-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+// Service, teaching, honors ---------------------------------------------------------------
+.service-heading {
+  margin: 1em 0 0.3em 0;
+  font-size: 1.05rem;
+  color: $accent-color;
+}
+
+.service-list {
+  margin-bottom: 0.5em;
+
+  li {
+    margin-bottom: 4px;
+  }
+}
+
+// Introduction --------------------------------------------------------------------------
+.hero {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+}
+
+.hero-headline {
+  margin: 0 0 2px 0;
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  margin: 0 0 14px 0;
+  font-weight: 600;
+  color: $accent-color;
+}
+
+.highlight-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 0;
+  margin: 0 0 14px 0;
+  font-size: 0.86rem;
+  color: #4a4a4a;
+
+  strong {
+    color: $accent-color;
+    font-weight: 700;
+  }
+}
+
+.strip-item {
+  white-space: nowrap;
+}
+
+.strip-sep {
+  margin: 0 7px;
+  color: #b5b5b5;
+}
+
+// On narrow screens the strip wraps, so list the items one per line without separators.
+@include media-query($on-palm) {
+  .highlight-strip {
+    flex-direction: column;
+  }
+  .strip-sep {
+    display: none;
+  }
+}
+
+.intro-secondary {
+  font-size: $small-font-size;
+  color: #4a4a4a;
+}
+
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  margin: 4px 30px 0px 0px;
+}
+
+img.my-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.intro-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  list-style: none;
+  margin: 12px 0 10px 0;
+
+  a {
+    color: $text-color;
+    font-size: 1.35em;
+  }
+
+  a:hover {
+    color: $accent-color;
+    text-decoration: none;
+  }
+}
+
+.intro-paragraph {
+  text-align: left;
+}
+
+.intro-callout {
+  padding: 8px 12px;
+  border-left: 4px solid $accent-color;
+  border-radius: 0 4px 4px 0;
+  background-color: $accent-tint;
+}
+
+@include media-query($on-palm) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-headline {
+    font-size: 1.5rem;
+  }
+  .profile-container {
+    align-self: center;
+    margin: 0 0 20pt 0;
+  }
+  img.my-photo {
+    width: 140px;
+    height: 140px;
+  }
+  .intro-paragraph {
+    text-align: left;
+  }
+}
+
+// overriding
+.social-media-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  li {
+    margin: 5px 5px 5px 5px;
+    a {
+      border: none;
+      color: black;
+      i {
+        font-size: 1.5em;
+      }
+    }
+    a:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// Header title animation ----------------------------------------------------------------
+.site-title {
+  position: relative;
+  display: inline-block;
+}
+
+#title-nickname,
+#title-firstname,
+#title-lastname {
+  white-space: nowrap;
+}
+
+#title-firstname {
+  position: relative;
+  display: inline-block;
+}
+
+#title-nickname {
+  position: absolute;
+  left: 0;
+}
+
+#title-lastname {
+  position: absolute;
+  left: 0;
+  // Initial transform to prevent overlap with firstname
+  // This will be overridden by JavaScript classes
+  transform: translateX(100px);
+}
+
+.title-slide-in {
+  animation-name: slidein;
+  animation-duration: $title-animation-duration;
+}
+
+.title-slide-out {
+  animation-name: slideout;
+  animation-duration: $title-animation-duration;
+}
+
+.title-stay-left {
+  transform: $title-translate-left;
+}
+
+.title-stay-right {
+  transform: $title-translate-right;
+}
+
+.title-slide-left {
+  animation-name: slideleft;
+  animation-duration: $title-animation-duration;
+}
+
+.title-slide-right {
+  animation-name: slideright;
+  animation-duration: $title-animation-duration;
+}
+
+@keyframes slideleft {
+  from {
+    transform: $title-translate-right;
+  }
+  to {
+    transform: $title-translate-left;
+  }
+}
+
+@keyframes slideright {
+  from {
+    transform: $title-translate-left;
+  }
+  to {
+    transform: $title-translate-right;
+  }
+}
+
+@keyframes slidein {
+  from {
+    bottom: 100%;
+    opacity: 0;
+  }
+  to {
+    bottom: 3%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideout {
+  from {
+    top: 0%;
+    opacity: 1;
+  }
+  to {
+    top: 100%;
+    opacity: 0;
+  }
+}

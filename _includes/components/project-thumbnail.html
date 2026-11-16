@@ -1,0 +1,23 @@
+<article class="research-card">
+  <div class="research-media">
+    {%- include components/media.html video=project.video poster=project.poster image=project.image fit=project.fit alt=project.title class="media" -%}
+  </div>
+  <div class="research-content">
+    <h3 class="research-title">{{ project.title }}</h3>
+    {%- if project.subtitle -%}<p class="research-subtitle">{{ project.subtitle }}</p>{%- endif -%}
+    {%- if project.headline -%}<p class="research-headline">{{ project.headline }}</p>{%- endif -%}
+    <p class="research-description">{{ project.description }}</p>
+    {%- if project.tags.size > 0 -%}
+      <ul class="research-tags">
+        {%- for tag in project.tags -%}<li>{{ tag }}</li>{%- endfor -%}
+      </ul>
+    {%- endif -%}
+    {%- if project.links.size > 0 -%}
+      <span class="home-project-links">
+        {%- for lnk in project.links -%}
+          {% include components/material-link.html material=lnk %}
+        {%- endfor -%}
+      </span>
+    {%- endif -%}
+  </div>
+</article>
